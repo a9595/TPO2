@@ -16,12 +16,15 @@ public class Server {
         out = new PrintWriter(socket.getOutputStream(), true);
         in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-
+        serverIO();
     }
 
-    public void serverIO() {
+    public void serverIO() throws IOException {
         String input;
-        while()
+        while ((input = in.readLine()) != null) {
+            System.out.println("input = " + input);
+            out.println(input);
+        }
     }
 
 
